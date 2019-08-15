@@ -1,0 +1,22 @@
+.avatar {
+    position: relative;
+    border-radius: 25px;
+}
+
+.status {
+    position: absolute;
+    bottom: 0;
+    right: 42px;
+    width: 28px;
+    height: auto;
+    animation: shine 3s infinite forwards;
+
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5)) contrast(150%) brightness(100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+}
+
+.status-small .status {
+    width: 15px;
+    height: auto;
+}
