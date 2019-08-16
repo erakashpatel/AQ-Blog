@@ -41,7 +41,7 @@ class User extends Authenticatable
 
     public function posts()
     {
-        return Post::all()->where('author', '=', $this->getAttribute('id'));
+        return $this->hasMany(Post::class);
     }
 
     public function roles()
