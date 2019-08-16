@@ -8,9 +8,9 @@ class UserRole extends Model
 {
     public $timestamps = false;
 
-    protected $attributes = [ 'user', 'role' ];
+    protected $attributes = ['user_id', 'role_id'];
 
-    protected $fillable = [ 'user', 'role' ];
+    protected $fillable = ['user_id', 'role_id'];
 
-    protected $casts = [ 'user' => User::class, 'role' => Role::class ];
+    protected $casts = ['user_id' => User::class, 'role_id' => Role::class];
 }

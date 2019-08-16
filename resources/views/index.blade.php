@@ -48,18 +48,21 @@
 
                                                 <ul class="list-unstyled mt-2">
                                                     <li class="small"><a href="#"
-                                                                         class="text-dark font-weight-bolder">{{ $post->author->name }}</a>
+                                                                         class="text-dark font-weight-bolder"> {{ $post->author->name }}</a>
                                                     </li>
 
-                                                    {{--                                                    @foreach($post->author->roles as $role)--}}
-                                                    {{--                                                        <li class="small">--}}
-                                                    {{--                                                            @if ($role->hasImageBadge())--}}
-                                                    {{--                                                                <img src="{{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}" alt="{{ $role->name }}">--}}
-                                                    {{--                                                            @else--}}
-                                                    {{--                                                                <span style="background-color: {{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}">{{ $role->name }}</span>--}}
-                                                    {{--                                                            @endif--}}
-                                                    {{--                                                        </li>--}}
-                                                    {{--                                                    @endforeach--}}
+                                                    @foreach($post->author->roles as $role)
+                                                        <li class="small">
+                                                            @if ($role->hasImageBadge())
+                                                                <img
+                                                                    src="{{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}"
+                                                                    alt="{{ $role->name }}">
+                                                            @else
+                                                                <span
+                                                                    style="background-color: {{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}">{{ $role->name }}</span>
+                                                            @endif
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>

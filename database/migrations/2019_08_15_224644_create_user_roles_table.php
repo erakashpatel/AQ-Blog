@@ -11,14 +11,14 @@ class CreateUserRolesTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('user_roles', static function (Blueprint $table) {
-            $table->unsignedBigInteger('user')->index();
-            $table->foreign('user')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedBigInteger('role')->index();
-            $table->foreign('role')->references('id')->on('roles');
+            $table->unsignedBigInteger('role_id')->index();
+            $table->foreign('role_id')->references('id')->on('roles');
 
             $table->engine = 'InnoDB';
         });
@@ -29,7 +29,7 @@ class CreateUserRolesTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('user_roles');
     }

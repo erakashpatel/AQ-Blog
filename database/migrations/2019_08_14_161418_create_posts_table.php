@@ -18,8 +18,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('short_description');
             $table->text('long_description');
-            $table->unsignedBigInteger('author')->index();
-            $table->foreign('author')->references('id')->on('users');
+            $table->unsignedBigInteger('author_id')->index();
+            $table->foreign('author_id')->references('id')->on('users');
             $table->timestamps();
             $table->engine = 'InnoDB';
         });
