@@ -2,13 +2,15 @@
 
 namespace AQ_Blog;
 
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Cache;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
