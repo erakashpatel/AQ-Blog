@@ -36,21 +36,30 @@
                                         <div class="col col-md-3">
                                             <div class="text-center" id="profile_info">
                                                 <div class="avatar">
-                                                    <img class="rounded-circle"
-                                                         src="{{ \AQ_Blog\Util\ImageHelper::getUserAvatar($post->author) }}"
-                                                         alt="{{ $post->author->name }}"
-                                                         width="128"
-                                                         height="100">
-                                                    <img
-                                                        src="{{ \AQ_Blog\Util\ImageHelper::getUserStatus($post->author) }}"
-                                                        class="status">
+                                                    {{--                                                    <img class="rounded-circle"--}}
+                                                    {{--                                                         src="{{ \AQ_Blog\Util\ImageHelper::getUserAvatar($post->author) }}"--}}
+                                                    {{--                                                         alt="{{ $post->author->name }}"--}}
+                                                    {{--                                                         width="128"--}}
+                                                    {{--                                                         height="100">--}}
+                                                    {{--                                                    <img--}}
+                                                    {{--                                                        src="{{ \AQ_Blog\Util\ImageHelper::getUserStatus($post->author) }}"--}}
+                                                    {{--                                                        class="status" alt="User Status">--}}
                                                 </div>
 
                                                 <ul class="list-unstyled mt-2">
                                                     <li class="small"><a href="#"
                                                                          class="text-dark font-weight-bolder">{{ $post->author->name }}</a>
                                                     </li>
-                                                    <!-- TODO: List all roles. -->
+
+                                                    {{--                                                    @foreach($post->author->roles as $role)--}}
+                                                    {{--                                                        <li class="small">--}}
+                                                    {{--                                                            @if ($role->hasImageBadge())--}}
+                                                    {{--                                                                <img src="{{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}" alt="{{ $role->name }}">--}}
+                                                    {{--                                                            @else--}}
+                                                    {{--                                                                <span style="background-color: {{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}">{{ $role->name }}</span>--}}
+                                                    {{--                                                            @endif--}}
+                                                    {{--                                                        </li>--}}
+                                                    {{--                                                    @endforeach--}}
                                                 </ul>
                                             </div>
                                         </div>
@@ -97,8 +106,10 @@
                 <div class="card-body flex-wrap">
                     @foreach($users as $user)
                         @if ($user->online())
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="{{ $user->name }}" tabindex="0">
-                                <img src="{{ \AQ_Blog\Util\ImageHelper::getUserAvatar($user) }}" alt="{{ $user->name }}" width="50" height="40">
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="{{ $user->name }}"
+                               tabindex="0">
+                                {{--                                <img src="{{ \AQ_Blog\Util\ImageHelper::getUserAvatar($user) }}" alt="{{ $user->name }}"--}}
+                                {{--                                     width="50" height="40">--}}
                             </a>
                         @endif
                     @endforeach
