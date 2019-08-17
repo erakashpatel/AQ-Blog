@@ -24,7 +24,7 @@ class ImageHelper
 
     public static function getUserStatus(User $user): string
     {
-        return asset((self::STORAGE_DIR . $user->online()) ? self::ONLINE_STATUS : self::OFFLINE_STATUS);
+        return asset(($user->online() ? self::ONLINE_STATUS : self::OFFLINE_STATUS));
     }
 
     public static function getRoleBadge(Role $role): string
@@ -37,7 +37,7 @@ class ImageHelper
 
         $url = asset(self::BADGE_DIR . $role->badge);
 
-        if (isset($url) && !empty($url)) {
+        if (isset($url) && !empty($url) && file_exists(self::BADGE_DIR . $role->badge)) {
             return $url; // Badge image.
         }
 

@@ -10,6 +10,13 @@
             max-height: 600px;
             overflow-y: auto;
         }
+
+        .role-badge.badge {
+            font-size: 12px;
+            width: 120px;
+            height: 18px;
+            border-radius: 5px;
+        }
     </style>
 @endsection
 
@@ -36,14 +43,14 @@
                                         <div class="col col-md-3">
                                             <div class="text-center" id="profile_info">
                                                 <div class="avatar">
-                                                    {{--                                                    <img class="rounded-circle"--}}
-                                                    {{--                                                         src="{{ \AQ_Blog\Util\ImageHelper::getUserAvatar($post->author) }}"--}}
-                                                    {{--                                                         alt="{{ $post->author->name }}"--}}
-                                                    {{--                                                         width="128"--}}
-                                                    {{--                                                         height="100">--}}
-                                                    {{--                                                    <img--}}
-                                                    {{--                                                        src="{{ \AQ_Blog\Util\ImageHelper::getUserStatus($post->author) }}"--}}
-                                                    {{--                                                        class="status" alt="User Status">--}}
+                                                    <img class="rounded-circle"
+                                                         src="{{ \AQ_Blog\Util\ImageHelper::getUserAvatar($post->author) }}"
+                                                         alt="{{ $post->author->name }}"
+                                                         width="128"
+                                                         height="100">
+                                                    <img
+                                                        src="{{ \AQ_Blog\Util\ImageHelper::getUserStatus($post->author) }}"
+                                                        class="status" alt="User Status">
                                                 </div>
 
                                                 <ul class="list-unstyled mt-2">
@@ -56,10 +63,13 @@
                                                             @if ($role->hasImageBadge())
                                                                 <img
                                                                     src="{{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}"
-                                                                    alt="{{ $role->name }}">
+                                                                    alt="{{ $role->name }}"
+                                                                    width="128px"
+                                                                    height="30px"
+                                                                    class="role-badge">
                                                             @else
-                                                                <span
-                                                                    style="background-color: {{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}">{{ $role->name }}</span>
+                                                                <span class="badge role-badge"
+                                                                      style="background-color: {{ \AQ_Blog\Util\ImageHelper::getRoleBadge($role) }}">{{ $role->name }}</span>
                                                             @endif
                                                         </li>
                                                     @endforeach
@@ -111,8 +121,8 @@
                         @if ($user->online())
                             <a href="#" data-toggle="tooltip" data-placement="bottom" title="{{ $user->name }}"
                                tabindex="0">
-                                {{--                                <img src="{{ \AQ_Blog\Util\ImageHelper::getUserAvatar($user) }}" alt="{{ $user->name }}"--}}
-                                {{--                                     width="50" height="40">--}}
+                                <img src="{{ \AQ_Blog\Util\ImageHelper::getUserAvatar($user) }}" alt="{{ $user->name }}"
+                                     width="50" height="40">
                             </a>
                         @endif
                     @endforeach
