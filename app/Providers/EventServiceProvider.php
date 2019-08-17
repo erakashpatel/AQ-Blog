@@ -2,6 +2,7 @@
 
 namespace AQ_Blog\Providers;
 
+use AQ_Blog\Events\TrackLastActivity;
 use AQ_Blog\Events\TrackLogin;
 use AQ_Blog\Events\TrackLogout;
 use Illuminate\Auth\Events\Login;
@@ -20,14 +21,15 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+            TrackLastActivity::class
         ],
 
         Login::class => [
-            TrackLogin::class
+            TrackLastActivity::class
         ],
 
         Logout::class => [
-            TrackLogout::class
+            TrackLastActivity::class
         ]
     ];
 

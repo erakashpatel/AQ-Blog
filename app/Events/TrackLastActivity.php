@@ -4,7 +4,7 @@ namespace AQ_Blog\Events;
 
 use AQ_Blog\Util\DataHelper;
 
-class TrackLogout
+class TrackLastActivity
 {
     /**
      * Handle the event.
