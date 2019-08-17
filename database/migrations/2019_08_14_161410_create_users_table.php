@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('avatar')->default('default_avatar.jpg');
             $table->rememberToken();
+            $table->timestamp('last_activity')->nullable();
             $table->engine = 'InnoDB';
         });
     }
